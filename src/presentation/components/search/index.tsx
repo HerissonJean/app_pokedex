@@ -5,7 +5,7 @@ import InputExemple from '../inputSearch'
 
 const ComponentSearch = () => {
   return (
-    <View style={{ margin: 16 }}>
+    <View style={{ margin: 16, backgroundColor: '#E5E5E5' }}>
       {/* <TextInput
         style={{
           borderRadius: 45,

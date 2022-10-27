@@ -1,4 +1,3 @@
-import { Text } from 'native-base'
 import React from 'react'
 import {
   ComponentText,
@@ -8,22 +7,22 @@ import {
   Container2
 } from './style'
 const ic_pokeball = require('../../assets/ic_pokeball.png')
-const ic_return = require('../../assets/ic_return.png')
+const ic_sort = require('../../assets/ic_sort.png')
 
-const HeaderPokedex = () => {
+const Header = () => {
   return (
     <Container>
       <Container1>
-        <ComponentImage source={ic_return} />
+        <ComponentImage source={ic_pokeball} />
       </Container1>
       <Container2>
-        <ComponentText>Charmander</ComponentText>
+        <ComponentText>Pokédex</ComponentText>
       </Container2>
       <Container1>
-        <Text>#001</Text>
+        <ComponentImage source={ic_sort} />
       </Container1>
     </Container>
   )
 }
 
-export default HeaderPokedex
+export default Header

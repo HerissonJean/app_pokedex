@@ -16,8 +16,8 @@ export const ComponentText = styled.Text`
 `
 
 export const ComponentImage = styled.Image`
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
 `
 
 export const Container = styled.View`

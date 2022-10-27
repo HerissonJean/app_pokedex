@@ -2,8 +2,8 @@ import styled from 'styled-components/native'
 
 export const CardComponent = styled.TouchableOpacity`
   background-color: white;
-  width: 30%;
-  height: 35%;
+  width: 115px;
+  height: 150px;
   padding: 5px;
   border-radius: 5px;
   margin: 5px;
