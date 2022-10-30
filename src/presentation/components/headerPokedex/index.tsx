@@ -1,3 +1,4 @@
+import { Text } from 'native-base'
 import React from 'react'
 import {
   ComponentText,
@@ -6,23 +7,32 @@ import {
   Container1,
   Container2
 } from './style'
-const ic_pokeball = require('../../assets/ic_pokeball.png')
-const ic_sort = require('../../assets/ic_sort.png')
+import ic_pokeball1 from '../../assets/ic_pokeball.png'
+import ic_return1 from '../../assets/ic_return.png'
+import { useNavigation } from '@react-navigation/native'
 
-const Header = () => {
+const HeaderPokedex = () => {
+  // const ic_pokeball = require('../../assets/ic_pokeball.png')
+  // const ic_return = require('../../assets/ic_return.png')
+  const navigation = useNavigation()
+
+  function handleLogin() {
+    navigation.goBack()
+  }
+
   return (
     <Container>
-      <Container1>
-        <ComponentImage source={ic_pokeball} />
+      <Container1 onPress={handleLogin}>
+        <ComponentImage source={ic_return1} />
       </Container1>
       <Container2>
-        <ComponentText>Pokédex</ComponentText>
+        <ComponentText>Charmander</ComponentText>
       </Container2>
       <Container1>
-        <ComponentImage source={ic_sort} />
+        <Text style={{ color: 'white', fontWeight: 'bold' }}>#001</Text>
       </Container1>
     </Container>
   )
 }
 
-export default Header
+export default HeaderPokedex

@@ -4,19 +4,20 @@ export const CardComponent = styled.TouchableOpacity`
   background-color: white;
   width: 115px;
   height: 150px;
-  padding: 5px;
+  /* padding: 5px; */
   border-radius: 5px;
-  margin: 5px;
+  margin-right: 8px;
+  margin-bottom: 30px;
 `
 
-export const TextCaomponent = styled.Text`
+export const TextComponent = styled.Text`
   color: red;
   text-align: right;
 `
 
-export const TextNameCaomponent = styled.Text`
+export const TextNameComponent = styled.Text`
   font-weight: bold;
   color: white;
-  background-color: pink;
+  height: 20px;
   text-align: center;
 `

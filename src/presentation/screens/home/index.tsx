@@ -1,15 +1,15 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
-// import Header from '../../components/header'
-import HeaderPokedex from '../../components/header'
-
+import Header from '../../components/header'
+import HeaderPokedex from '../../components/headerPokedex'
 import Input from '../../components/search'
-import Card from '../../components/Card'
-
+import Card from '../../components/card'
 import { StatusBar } from 'expo-status-bar'
-import ScreenComponent from '../../components/ScreenComponent'
+import ScreenComponent from '../../components/screenComponent'
 import { FlatList } from './style'
 import { initialWindowSafeAreaInsets } from 'react-native-safe-area-context'
+import ImagePokemon from '../../components/imagePokemon'
+import ic_charmander from '../../assets/ic_charmander.png'
 
 const Home = () => {
   const data = [
@@ -148,14 +148,11 @@ const Home = () => {
     <Card url={item.url} />
   )
 
-  const ic_charmander = require('../../assets/ic_charmander.png')
-
   return (
     <ScreenComponent>
-      {/*  
-        <Header />
+      <Header />
       <Input />
-   
+
       <FlatList
         style={{
           flexDirection: 'column'
@@ -169,41 +166,7 @@ const Home = () => {
         data={data}
         renderItem={({ item }) => renderItem(item)}
         keyExtractor={(item: any) => item.id}
-      /> */}
-      {/* AQUI */}
-      <View
-        style={{ backgroundColor: '#F57D31', width: '100%', height: '100%' }}
-      >
-        <HeaderPokedex></HeaderPokedex>
-        <View
-          style={{
-            width: '100%',
-            backgroundColor: 'green',
-            alignItems: 'center'
-          }}
-        >
-          <Image
-            source={ic_charmander}
-            style={{
-              marginTop: 24,
-              alignItems: 'center'
-            }}
-          ></Image>
-        </View>
-        <View
-          style={{
-            backgroundColor: 'white',
-            width: '100%',
-            height: 400,
-            justifyContent: 'center',
-            alignItems: 'center',
-            borderRadius: 15
-            // borderBottomEndRadius: 15
-          }}
-        >
-          <Text>About</Text>
-        </View>
-      </View>
+      />
     </ScreenComponent>
   )
 }

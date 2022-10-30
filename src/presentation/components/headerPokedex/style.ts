@@ -10,7 +10,7 @@ export interface ICompImage {
 
 export const ComponentText = styled.Text`
   font-size: 30px;
-  color: black;
+  color: white;
   margin-left: 10px;
   font-weight: bold;
 `
@@ -22,12 +22,15 @@ export const ComponentImage = styled.Image`
 
 export const Container = styled.View`
   flex-direction: row;
+  width: 100%;
+  height: 5%;
+  background-color: blue;
   margin-top: 36px;
   padding-left: 16px;
   padding-right: 16px;
 `
 
-export const Container1 = styled.View`
+export const Container1 = styled.TouchableOpacity`
   width: 10%;
   justify-content: center;
 `
