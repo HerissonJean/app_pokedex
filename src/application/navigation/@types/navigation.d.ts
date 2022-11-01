@@ -1,13 +1,8 @@
-// export interface GameParams {
-//   id: string
-//   title: string
-//   bannerUrl: string
-// }
-
 interface PokedexParams {
-  // id: number
-  url: string
-  // name: string
+  id?: number
+  urlImage?: string
+  name?: string
+  color?: string
 }
 
 export declare global {

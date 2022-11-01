@@ -11,9 +11,6 @@ import ic_pokeball1 from '../../assets/ic_pokeball.png'
 import ic_sort1 from '../../assets/ic_sort.png'
 
 const Header = () => {
-  // const ic_pokeball = require('../../assets/ic_pokeball.png')
-  // const ic_sort = require('../../assets/ic_sort.png')
-
   return (
     <Container>
       <Container1>

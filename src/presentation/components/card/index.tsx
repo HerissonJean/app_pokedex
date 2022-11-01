@@ -1,33 +1,45 @@
-import { Image, ToastAndroid } from 'react-native'
+import { Image } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
-import React from 'react'
 import { CardComponent, TextComponent, TextNameComponent } from './style'
-import { Center, View } from 'native-base'
+import { View } from 'native-base'
+import React, { useEffect, useState } from 'react'
+import { defineColor } from '../../../utils/defineColors'
 
 interface ICardProps {
-  url: string
+  data: {
+    name: string
+  }
+}
+interface IPokemon {
+  id: number
+  name: string
+  sprites: { front_default: string }
+  types: [{ type: { name: string } }]
 }
 
-const Card = ({ url }: ICardProps) => {
+const Card = ({ data }: ICardProps) => {
   const navigation = useNavigation()
 
+  const [pokemon, setPokemon] = useState<IPokemon>()
+
   function handleLogin() {
-    navigation.navigate('pokedex', { url })
+    navigation.navigate('pokedex', {})
   }
 
+  useEffect(() => {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${data.name}`)
+      .then(res => res.json())
+      .then(data => setPokemon(data))
+  }, [data])
+
   return (
-    <CardComponent onPress={handleLogin}>
-      <TextComponent>#001</TextComponent>
-      <View
-        style={{
-          backgroundColor: 'grey',
-          width: '100%',
-          height: '80%',
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}
-      >
+    <CardComponent
+      onPress={handleLogin}
+      color={defineColor(pokemon && pokemon.types[0].type.name)}
+    >
+      <TextComponent>{pokemon && pokemon.id}</TextComponent>
+      <View>
         <Image
           style={{
             width: 115,
@@ -38,7 +50,7 @@ const Card = ({ url }: ICardProps) => {
             alignSelf: 'center'
           }}
           source={{
-            uri: url
+            uri: pokemon && pokemon.sprites.front_default
           }}
         />
       </View>
@@ -46,14 +58,14 @@ const Card = ({ url }: ICardProps) => {
       <View
         style={{
           backgroundColor: 'red',
-          height: 30,
+          height: 26,
           borderBottomRightRadius: 5,
           borderBottomLeftRadius: 5,
           justifyContent: 'center',
           alignItems: 'center'
         }}
       >
-        <TextNameComponent>Bulbasaurrr</TextNameComponent>
+        <TextNameComponent>{pokemon && pokemon.name}</TextNameComponent>
       </View>
     </CardComponent>
   )

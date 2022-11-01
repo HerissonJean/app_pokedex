@@ -30,7 +30,7 @@ const Pokedex = () => {
         </View>
         <Image
           style={{ width: '70%', height: '70%' }}
-          source={{ uri: pokemon.url }}
+          source={{ uri: pokemon.urlImage }}
         ></Image>
         <View>
           <Text style={{ color: 'white' }}> X </Text>
