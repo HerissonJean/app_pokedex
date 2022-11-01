@@ -13,7 +13,8 @@ const List = ({ results }: IList) => {
       <FlatList
         style={{
           flexDirection: 'column',
-          height: '80%'
+          height: '80%',
+          marginTop: 16
         }}
         numColumns={3}
         columnWrapperStyle={{

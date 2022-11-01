@@ -27,7 +27,7 @@ export const Container = styled.View`
   padding-right: 16px;
 `
 
-export const Container1 = styled.View`
+export const Container1 = styled.TouchableOpacity`
   width: 10%;
   justify-content: center;
 `

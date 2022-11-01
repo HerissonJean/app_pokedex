@@ -5,19 +5,7 @@ import InputExemple from '../inputSearch'
 
 const ComponentSearch = () => {
   return (
-    <View style={{ margin: 16, backgroundColor: '#E5E5E5' }}>
-      {/* <TextInput
-        style={{
-          borderRadius: 45,
-          justifyContent: 'center',
-          borderColor: 'grey',
-          borderWidth: 1,
-          textAlign: 'center'
-        }}
-        placeholder="Procurar"
-      ></TextInput>
-      <Icon name="search" size={32} color="grey" /> */}
-
+    <View>
       <InputExemple />
     </View>
   )
