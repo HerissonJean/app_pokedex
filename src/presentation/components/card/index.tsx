@@ -39,15 +39,11 @@ const Card = ({ data }: ICardProps) => {
       color={defineColor(pokemon && pokemon.types[0].type.name)}
     >
       <TextComponent>{pokemon && pokemon.id}</TextComponent>
-      <View>
+      <View style={{ backgroundColor: 'green' }}>
         <Image
           style={{
             width: 115,
-            height: 80,
-            alignItems: 'center',
-            justifyContent: 'center',
-            alignContent: 'center',
-            alignSelf: 'center'
+            height: 120
           }}
           source={{
             uri: pokemon && pokemon.sprites.front_default
@@ -57,15 +53,16 @@ const Card = ({ data }: ICardProps) => {
 
       <View
         style={{
-          backgroundColor: 'red',
-          height: 26,
-          borderBottomRightRadius: 5,
-          borderBottomLeftRadius: 5,
+          backgroundColor: 'grey',
+          height: '20%',
+
           justifyContent: 'center',
           alignItems: 'center'
         }}
       >
-        <TextNameComponent>{pokemon && pokemon.name}</TextNameComponent>
+        <TextNameComponent>
+          {pokemon && pokemon.name.toUpperCase()}
+        </TextNameComponent>
       </View>
     </CardComponent>
   )
