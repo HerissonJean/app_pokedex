@@ -14,7 +14,7 @@ export function defineColor(type: string | undefined) {
       return '#78C850'
     case 'poison':
       return '#A14CA0'
-    case 'eletric':
+    case 'electric':
       return '#F8D036'
     case 'ground':
       return '#E0C068'

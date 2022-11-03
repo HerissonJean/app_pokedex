@@ -12,8 +12,6 @@ import ic_return1 from '../../assets/ic_return.png'
 import { useNavigation } from '@react-navigation/native'
 
 const HeaderPokedex = () => {
-  // const ic_pokeball = require('../../assets/ic_pokeball.png')
-  // const ic_return = require('../../assets/ic_return.png')
   const navigation = useNavigation()
 
   function handleLogin() {

@@ -3,19 +3,17 @@ import React from 'react'
 import HeaderPokedex from '../../components/headerPokedex'
 import { useRoute } from '@react-navigation/native'
 import { PokedexParams } from '../../../application/navigation/@types/navigation'
+import { ContainerPokedex } from './style'
+import { defineColor } from '../../../utils/defineColors'
 
 const Pokedex = () => {
   const route = useRoute()
-
-  console.log(route)
   const { data } = route.params as PokedexParams
-  console.log(data)
 
-  const mockData = {
-    nome: 'Jose'
-  }
+  console.log(data && data.sprites.other.dream_world)
+
   return (
-    <View style={{ backgroundColor: '#F57D31', width: '100%', height: '100%' }}>
+    <ContainerPokedex color={defineColor(data && data.types[0].type.name)}>
       <HeaderPokedex></HeaderPokedex>
       <View
         style={{
@@ -30,10 +28,12 @@ const Pokedex = () => {
         <View>
           <Text style={{ color: 'white' }}> X </Text>
         </View>
-        {/* <Image
+        <Image
           style={{ width: '70%', height: '70%' }}
-          source={{ uri: data?.name }}
-        ></Image> */}
+          source={{
+            uri: data && data.sprites.other['official-artwork'].front_default
+          }}
+        ></Image>
         <View>
           <Text style={{ color: 'white' }}> X </Text>
         </View>
@@ -167,7 +167,7 @@ const Pokedex = () => {
           </View>
         </View>
       </View>
-    </View>
+    </ContainerPokedex>
   )
 }
 

@@ -19,10 +19,19 @@ interface ICardProps {
   }
 }
 export interface IPokemon {
-  id: number
+  id: number  
+  abilities: [{ ability: { name: string; url: string } }]
+  base_experience: string
+  forms:[name:string, url: string]
+  height:number
+  moves: [{move:{name:string}}]
   name: string
-  sprites: { front_default: string }
+  sprites: { front_default: string , other: {home:{front_default:string},dream_world:{front_default:string}, 'official-artwork':{front_default:string} } }
   types: [{ type: { name: string } }]
+  stats: [
+    { base_stat: number; effort: number; stat: { name: string; url: string } }
+  ]
+  weigth: number
 }
 
 const Card = ({ data }: ICardProps) => {
