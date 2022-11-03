@@ -9,3 +9,11 @@ export const ContainerPokedex = styled.View<Icolor>`
   width: 100%;
   height: 100%;
 `
+
+export const TextProps = styled.Text<Icolor>`
+  color: ${props => (props.color ? props.color : 'white')};
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+`

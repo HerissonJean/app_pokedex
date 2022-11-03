@@ -1,4 +1,3 @@
-import { Text } from 'native-base'
 import React from 'react'
 import {
   ComponentText,
@@ -31,9 +30,11 @@ const HeaderPokedex = ({ color, name, id }: IDetails) => {
       <Container2>
         <ComponentText>{name && name.toUpperCase()}</ComponentText>
       </Container2>
-      <Container1>
-        <Text style={{ color: 'white', fontWeight: 'bold' }}>{id}</Text>
-      </Container1>
+      <Container2>
+        <ComponentText style={{ color: 'white', fontWeight: 'bold' }}>
+          {id}
+        </ComponentText>
+      </Container2>
     </Container>
   )
 }
