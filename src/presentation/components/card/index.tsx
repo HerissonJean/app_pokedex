@@ -1,7 +1,13 @@
 import { Image } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
-import { CardComponent, TextComponent, TextNameComponent } from './style'
+import {
+  CardComponent,
+  ContainerColor,
+  ContainerText,
+  TextComponent,
+  TextNameComponent
+} from './style'
 import { View } from 'native-base'
 import React, { useEffect, useState } from 'react'
 import { defineColor } from '../../../utils/defineColors'
@@ -39,31 +45,25 @@ const Card = ({ data }: ICardProps) => {
       color={defineColor(pokemon && pokemon.types[0].type.name)}
     >
       <TextComponent>{pokemon && pokemon.id}</TextComponent>
-      <View style={{ backgroundColor: 'green' }}>
+      <ContainerColor
+        color={defineColor(pokemon && pokemon.types[0].type.name)}
+      >
         <Image
           style={{
             width: 115,
-            height: 120
+            height: 130
           }}
           source={{
             uri: pokemon && pokemon.sprites.front_default
           }}
         />
-      </View>
+      </ContainerColor>
 
-      <View
-        style={{
-          backgroundColor: 'grey',
-          height: '20%',
-
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}
-      >
+      <ContainerText>
         <TextNameComponent>
           {pokemon && pokemon.name.toUpperCase()}
         </TextNameComponent>
-      </View>
+      </ContainerText>
     </CardComponent>
   )
 }

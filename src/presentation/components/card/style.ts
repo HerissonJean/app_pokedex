@@ -1,28 +1,45 @@
 import styled from 'styled-components/native'
 
-export const CardComponent = styled.TouchableOpacity`
+interface IColor {
+  color: string
+}
+
+export const CardComponent = styled.TouchableOpacity<IColor>`
   background-color: white;
-  width: 115px;
-  height: 180px;
-  /* padding: 5px; */
-  border-radius: 5px;
+  width: 120px;
+  height: 200px;
+  border-radius: 8px;
+  border: 2px;
+  border-color: ${props => (props.color ? props.color : 'black')};
   margin-right: 8px;
-  border: 4px;
-  border-color: grey;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  justify-content: space-evenly;
 `
 
-export const TextComponent = styled.Text`
-  color: red;
-  font-weight: bold;
-
+export const TextComponent = styled.Text<IColor>`
+  margin-right: 8px;
   text-align: right;
-  margin-right: 5;
+  height: 8%;
+`
+
+export const ContainerColor = styled.View<IColor>`
+  background-color: ${props => (props.color ? props.color : 'black')};
 `
 
 export const TextNameComponent = styled.Text`
   font-weight: bold;
-  color: white;
+  color: black;
   height: 20px;
   text-align: center;
+`
+
+export const ContainerImage = styled.View`
+  width: 100%;
+  height: 68%;
+  justify-content: 'center';
+  align-items: 'center';
+`
+export const ContainerText = styled.View`
+  background-color: 'red';
+  height: 10%;
 `
