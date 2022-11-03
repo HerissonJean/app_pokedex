@@ -14,7 +14,11 @@ const Pokedex = () => {
 
   return (
     <ContainerPokedex color={defineColor(data && data.types[0].type.name)}>
-      <HeaderPokedex></HeaderPokedex>
+      <HeaderPokedex
+        color={defineColor(data && data.types[0].type.name)}
+        name={data && data.name}
+        id={data && data.id}
+      ></HeaderPokedex>
       <View
         style={{
           width: '100%',

@@ -46,5 +46,4 @@ export function defineColor(type: string | undefined) {
     case 'fairy':
       return '#EE99AC'
   }
-  return 4
 }

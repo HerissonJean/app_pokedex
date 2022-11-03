@@ -7,11 +7,16 @@ import {
   Container1,
   Container2
 } from './style'
-import ic_pokeball1 from '../../assets/ic_pokeball.png'
 import ic_return1 from '../../assets/ic_return.png'
 import { useNavigation } from '@react-navigation/native'
 
-const HeaderPokedex = () => {
+interface IDetails {
+  color: string | undefined
+  name: string | undefined
+  id: number | undefined
+}
+
+const HeaderPokedex = ({ color, name, id }: IDetails) => {
   const navigation = useNavigation()
 
   function handleLogin() {
@@ -19,15 +24,15 @@ const HeaderPokedex = () => {
   }
 
   return (
-    <Container>
+    <Container color={color}>
       <Container1 onPress={handleLogin}>
         <ComponentImage source={ic_return1} />
       </Container1>
       <Container2>
-        <ComponentText>Charmander</ComponentText>
+        <ComponentText>{name && name.toUpperCase()}</ComponentText>
       </Container2>
       <Container1>
-        <Text style={{ color: 'white', fontWeight: 'bold' }}>#001</Text>
+        <Text style={{ color: 'white', fontWeight: 'bold' }}>{id}</Text>
       </Container1>
     </Container>
   )

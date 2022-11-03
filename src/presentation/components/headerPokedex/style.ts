@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 
 interface IText {
-  marginleft: string
+  color: string
 }
 export interface ICompImage {
   marginStart: string
@@ -20,11 +20,11 @@ export const ComponentImage = styled.Image`
   height: 24px;
 `
 
-export const Container = styled.View`
+export const Container = styled.View<IText>`
   flex-direction: row;
   width: 100%;
   height: 5%;
-  background-color: blue;
+  background-color: ${props => (props.color ? props.color : 'black')};
   margin-top: 36px;
   padding-left: 16px;
   padding-right: 16px;
