@@ -25,7 +25,7 @@ const List = ({ results }: IList) => {
         data={results}
         showsVerticalScrollIndicator={true}
         renderItem={({ item, index }) => <Card data={item} key={index} />}
-        keyExtractor={(item: any) => item.id}
+        keyExtractor={(item, index: any) => index}
       />
     </View>
   )

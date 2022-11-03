@@ -1,8 +1,7 @@
-interface PokedexParams {
-  id?: number
-  urlImage?: string
-  name?: string
-  color?: string
+import { IPokemon } from '../../../presentation/components/card'
+
+export interface PokedexParams {
+  data: IPokemon | undefined
 }
 
 export declare global {

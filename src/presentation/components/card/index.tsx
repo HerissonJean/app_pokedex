@@ -11,13 +11,14 @@ import {
 import { View } from 'native-base'
 import React, { useEffect, useState } from 'react'
 import { defineColor } from '../../../utils/defineColors'
+import { PokedexParams } from '../../../application/navigation/@types/navigation'
 
 interface ICardProps {
   data: {
     name: string
   }
 }
-interface IPokemon {
+export interface IPokemon {
   id: number
   name: string
   sprites: { front_default: string }
@@ -28,9 +29,10 @@ const Card = ({ data }: ICardProps) => {
   const navigation = useNavigation()
 
   const [pokemon, setPokemon] = useState<IPokemon>()
+  const pokemonData: PokedexParams = { data: pokemon }
 
-  function handleLogin() {
-    navigation.navigate('pokedex', {})
+  function handleLogin({ data }: PokedexParams) {
+    navigation.navigate('pokedex', { data })
   }
 
   useEffect(() => {
@@ -41,7 +43,7 @@ const Card = ({ data }: ICardProps) => {
 
   return (
     <CardComponent
-      onPress={handleLogin}
+      onPress={() => handleLogin(pokemonData)}
       color={defineColor(pokemon && pokemon.types[0].type.name)}
     >
       <TextComponent>{pokemon && pokemon.id}</TextComponent>

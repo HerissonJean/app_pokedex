@@ -7,7 +7,9 @@ import { PokedexParams } from '../../../application/navigation/@types/navigation
 const Pokedex = () => {
   const route = useRoute()
 
-  const pokemon = route.params as PokedexParams
+  console.log(route)
+  const { data } = route.params as PokedexParams
+  console.log(data)
 
   const mockData = {
     nome: 'Jose'
@@ -28,10 +30,10 @@ const Pokedex = () => {
         <View>
           <Text style={{ color: 'white' }}> X </Text>
         </View>
-        <Image
+        {/* <Image
           style={{ width: '70%', height: '70%' }}
-          source={{ uri: pokemon.urlImage }}
-        ></Image>
+          source={{ uri: data?.name }}
+        ></Image> */}
         <View>
           <Text style={{ color: 'white' }}> X </Text>
         </View>
@@ -160,7 +162,7 @@ const Pokedex = () => {
                 margin: 4
               }}
             >
-              <Text>Teste</Text>
+              <Text>{data && data.name}</Text>
             </View>
           </View>
         </View>
