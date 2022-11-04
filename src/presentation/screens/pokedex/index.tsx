@@ -17,6 +17,9 @@ import {
 } from './style'
 import { defineColor } from '../../../utils/defineColors'
 
+import ContainerPowers from '../../components/ContainerPowers'
+
+import ContainerSize from '../../components/containerSize'
 import ic_weight from '../../assets/ic_weight.png'
 import ic_height from '../../assets/ic_height.png'
 import { Progress } from 'native-base'
@@ -75,20 +78,7 @@ const Pokedex = () => {
               </TextProps>
             </ContainerTypes>
             {/*  describe image */}
-            <ContainerAbilities>
-              <ViewHability>
-                <Image
-                  source={ic_weight}
-                  style={{ width: 20, height: 20 }}
-                ></Image>
-              </ViewHability>
-              <ViewHability>
-                <Image source={ic_height}></Image>
-              </ViewHability>
-              <ViewHability>
-                <Text>a</Text>
-              </ViewHability>
-            </ContainerAbilities>
+            <ContainerSize data={data}></ContainerSize>
             {/*  */}
             <ContainerTypes>
               <TextApresentation>
@@ -98,182 +88,7 @@ const Pokedex = () => {
             </ContainerTypes>
 
             {/*  base stats */}
-            <View
-              style={{
-                width: '98%',
-                height: '40%',
-                borderRadius: 25,
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginTop: 4,
-                marginStart: 4
-              }}
-            >
-              <TextProps color={defineColor(data && data.types[0].type.name)}>
-                Base Stats
-              </TextProps>
-
-              {/* aqui */}
-              <View
-                style={{
-                  flexDirection: 'column',
-                  flex: 1,
-                  width: '98%'
-                }}
-              >
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    flex: 1,
-                    width: '98%'
-                  }}
-                >
-                  <Text style={{ color: 'black', alignSelf: 'center' }}>
-                    {data && data.stats[0].stat.name.toUpperCase()}{' '}
-                  </Text>
-                  <Text
-                    style={{
-                      color: 'white',
-                      alignSelf: 'center',
-                      marginEnd: 4,
-                      color: 'fff'
-                    }}
-                  >
-                    {data && data.stats[0].base_stat}
-                  </Text>
-                  <Progress
-                    style={{ width: '50%', alignSelf: 'center' }}
-                    color="#fff"
-                    value={data && data.stats[0].base_stat}
-                  />
-                </View>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    flex: 1,
-                    width: '98%'
-                  }}
-                >
-                  <Text style={{ color: 'black', alignSelf: 'center' }}>
-                    {data && data.stats[1].stat.name.toUpperCase()}{' '}
-                  </Text>
-                  <Text
-                    style={{
-                      alignSelf: 'center',
-                      marginEnd: 4,
-                      color: 'fff'
-                    }}
-                  >
-                    {data && data.stats[1].base_stat}
-                  </Text>
-                  <Progress
-                    style={{ width: '50%', alignSelf: 'center' }}
-                    color="#fff"
-                    value={data && data.stats[1].base_stat}
-                  />
-                </View>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    flex: 1,
-                    width: '98%'
-                  }}
-                >
-                  <Text style={{ color: 'black', alignSelf: 'center' }}>
-                    {data && data.stats[2].stat.name.toUpperCase()}{' '}
-                  </Text>
-                  <Text
-                    style={{
-                      alignSelf: 'center',
-                      marginEnd: 4,
-                      color: 'fff'
-                    }}
-                  >
-                    {data && data.stats[2].base_stat}
-                  </Text>
-                  <Progress
-                    style={{ width: '50%', alignSelf: 'center' }}
-                    color="#fff"
-                    value={data && data.stats[2].base_stat}
-                  />
-                </View>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    flex: 1,
-                    width: '98%'
-                  }}
-                >
-                  <Text style={{ color: 'black', alignSelf: 'center' }}>
-                    {data && data.stats[3].stat.name.toUpperCase()}{' '}
-                  </Text>
-                  <Text
-                    style={{
-                      alignSelf: 'center',
-                      marginEnd: 4,
-                      color: 'fff'
-                    }}
-                  >
-                    {data && data.stats[3].base_stat}
-                  </Text>
-                  <Progress
-                    style={{ width: '50%', alignSelf: 'center' }}
-                    color="#fff"
-                    value={data && data.stats[3].base_stat}
-                  />
-                </View>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    flex: 1,
-                    width: '98%'
-                  }}
-                >
-                  <Text style={{ color: 'black', alignSelf: 'center' }}>
-                    {data && data.stats[4].stat.name.toUpperCase()}{' '}
-                  </Text>
-                  <Text
-                    style={{
-                      color: 'black',
-                      alignSelf: 'center',
-                      marginEnd: 4
-                    }}
-                  >
-                    {data && data.stats[4].base_stat}
-                  </Text>
-                  <Progress
-                    style={{ width: '50%', alignSelf: 'center' }}
-                    color="#fff"
-                    value={data && data.stats[4].base_stat}
-                  />
-                </View>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    flex: 1,
-                    width: '98%'
-                  }}
-                >
-                  <Text style={{ color: 'black', alignSelf: 'center' }}>
-                    {data && data.stats[5].stat.name.toUpperCase()}{' '}
-                  </Text>
-                  <Text
-                    style={{
-                      alignSelf: 'center',
-                      marginEnd: 4,
-                      color: 'black'
-                    }}
-                  >
-                    {data && data.stats[5].base_stat}
-                  </Text>
-                  <Progress
-                    style={{ width: '60%', alignSelf: 'center' }}
-                    color="#fff"
-                    value={data && data.stats[5].base_stat}
-                  />
-                </View>
-              </View>
-            </View>
+            <ContainerPowers data={data}></ContainerPowers>
           </View>
         </ContainerDatails>
       </View>

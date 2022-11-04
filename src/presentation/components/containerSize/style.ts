@@ -58,18 +58,28 @@ export const ViewType = styled.View<IType>`
 `
 export const ContainerAbilities = styled.View`
   width: 98%;
-  height: 25%;
+  height: 100%;
   justify-content: space-evenly;
   flex-direction: row;
 `
 export const ViewHability = styled.View`
-  width: 20%;
+  width: 100%;
   height: 80%;
-  background-color: yellow;
   border-radius: 25px;
-  margin: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
   align-self: center;
-  padding: 8px;
+`
+
+export const ViewHabilityColumn = styled.View`
+  width: 30%;
+  height: 100%;
+  border-radius: 25px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-self: center;
 `
 
 export const TextApresentation = styled.Text`
@@ -83,4 +93,7 @@ export const ContainerPowers = styled.View`
   align-items: center;
   margin-top: 4px;
   margin-right: 4px;
+`
+export const TextGrey = styled.Text`
+  color: grey;
 `

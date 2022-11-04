@@ -13,7 +13,7 @@ export const ContainerPokedex = styled.View<Icolor>`
   height: 100%;
 `
 
-export const TextProps = styled.Text<Icolor>`
+export const TextProps2 = styled.Text<Icolor>`
   color: ${props => (props.color ? props.color : 'white')};
   align-items: center;
   justify-content: center;
@@ -75,7 +75,7 @@ export const ViewHability = styled.View`
 export const TextApresentation = styled.Text`
   color: black;
 `
-export const ContainerPowers = styled.View`
+export const ContainerPowers2 = styled.View`
   width: 98%;
   height: 40%;
   border-radius: 25px;

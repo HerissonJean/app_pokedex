@@ -17,7 +17,7 @@ const Home = () => {
   const [data, setData] = useState<IReq>()
 
   useEffect(() => {
-    fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=50')
+    fetch('https://pokeapi.co/api/v2/pokemon/?offset=150&limit=300')
       .then(res => res.json())
       .then(data => setData(data))
   }, [data])
