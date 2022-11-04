@@ -1,15 +1,20 @@
-import {
-  View,
-  Text,
-  Image,
-  ProgressBarAndroidComponent,
-  ProgressBarAndroid
-} from 'react-native'
+import { View, Text, Image } from 'react-native'
 import React from 'react'
 import HeaderPokedex from '../../components/headerPokedex'
 import { useRoute } from '@react-navigation/native'
 import { PokedexParams } from '../../../application/navigation/@types/navigation'
-import { ContainerPokedex, TextProps } from './style'
+import {
+  ContainerPokedex,
+  TextProps,
+  ContainerImage,
+  ImagePokemon,
+  ContainerDatails,
+  ContainerTypes,
+  ViewType,
+  ContainerAbilities,
+  ViewHability,
+  TextApresentation
+} from './style'
 import { defineColor } from '../../../utils/defineColors'
 
 import ic_weight from '../../assets/ic_weight.png'
@@ -27,162 +32,70 @@ const Pokedex = () => {
         name={data && data.name}
         id={data && data.id}
       ></HeaderPokedex>
-      <View
-        style={{
-          width: '100%',
-          height: '45%',
-          alignItems: 'center',
-          flexDirection: 'row',
-          justifyContent: 'center'
-        }}
-      >
-        <Image
-          style={{ width: '100%', height: '100%' }}
+      <ContainerImage>
+        <ImagePokemon
           source={{
             uri: data && data.sprites.other['official-artwork'].front_default
           }}
-        ></Image>
-      </View>
+        ></ImagePokemon>
+      </ContainerImage>
 
       <View>
-        <View
-          style={{
-            width: '98%',
-            height: '65%',
-            backgroundColor: 'white',
-            borderRadius: 25,
-            margin: 4
-          }}
-        >
+        <ContainerDatails>
           <View
             style={{
               width: '98%',
               height: '100%',
               borderRadius: 25,
               margin: 4
+              // container estranho
             }}
           >
             {/*  Types */}
 
-            <View
-              style={{
-                width: '98%',
-                height: '10%',
-                borderRadius: 25,
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center'
-              }}
-            >
-              <View
+            <ContainerTypes>
+              <ViewType
                 style={{
-                  width: '15%',
-                  height: '100%',
-                  backgroundColor: 'blue',
-                  borderRadius: 25,
-                  justifyContent: 'center',
-                  alignItems: 'center'
+                  backgroundColor: 'blue'
                 }}
               >
                 <TextProps>Fire</TextProps>
-              </View>
+              </ViewType>
 
-              <View
-                style={{
-                  width: '15%',
-                  height: '100%',
-                  backgroundColor: 'grey',
-                  borderRadius: 25,
-                  justifyContent: 'center',
-                  alignItems: 'center'
-                }}
-              >
+              <ViewType>
                 <TextProps>Water</TextProps>
-              </View>
-            </View>
+              </ViewType>
+            </ContainerTypes>
 
             {/*  About */}
 
-            <View
-              style={{
-                width: '98%',
-                height: '8%',
-                borderRadius: 25,
-                justifyContent: 'center',
-                alignItems: 'center',
-                margin: 4
-              }}
-            >
+            <ContainerTypes>
               <TextProps color={defineColor(data && data.types[0].type.name)}>
                 About
               </TextProps>
-            </View>
+            </ContainerTypes>
             {/*  describe image */}
-            <View
-              style={{
-                width: '98%',
-                height: '25%',
-                borderRadius: 25,
-                justifyContent: 'space-evenly',
-                flexDirection: 'row'
-              }}
-            >
-              <View
-                style={{
-                  width: '20%',
-                  height: '80%',
-                  backgroundColor: 'yellow',
-                  borderRadius: 25,
-                  margin: 8,
-                  alignSelf: 'center',
-                  padding: 8
-                }}
-              >
-                <Image source={ic_weight}></Image>
-              </View>
-              <View //
-                style={{
-                  width: '20%',
-                  height: '80%',
-                  backgroundColor: 'yellow',
-                  borderRadius: 25,
-                  alignSelf: 'center',
-                  padding: 8,
-
-                  margin: 4
-                }}
-              >
+            <ContainerAbilities>
+              <ViewHability>
+                <Image
+                  source={ic_weight}
+                  style={{ width: 20, height: 20 }}
+                ></Image>
+              </ViewHability>
+              <ViewHability>
                 <Image source={ic_height}></Image>
-              </View>
-              <View
-                style={{
-                  width: '20%',
-                  height: '80%',
-                  backgroundColor: 'yellow',
-                  borderRadius: 25,
-                  margin: 4,
-                  alignSelf: 'center',
-                  padding: 6
-                }}
-              >
+              </ViewHability>
+              <ViewHability>
                 <Text>a</Text>
-              </View>
-            </View>
+              </ViewHability>
+            </ContainerAbilities>
             {/*  */}
-            <View
-              style={{
-                width: '98%',
-                height: '12%',
-                borderRadius: 25,
-                justifyContent: 'center',
-                alignItems: 'center'
-              }}
-            >
-              <Text style={{ color: 'black' }}>
+            <ContainerTypes>
+              <TextApresentation>
                 When it retracts its long neck into its shell, it squirts out
                 water with vigorous force.
-              </Text>
-            </View>
+              </TextApresentation>
+            </ContainerTypes>
 
             {/*  base stats */}
             <View
@@ -362,7 +275,7 @@ const Pokedex = () => {
               </View>
             </View>
           </View>
-        </View>
+        </ContainerDatails>
       </View>
     </ContainerPokedex>
   )
