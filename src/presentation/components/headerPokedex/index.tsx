@@ -4,7 +4,9 @@ import {
   Container,
   ComponentImage,
   Container1,
-  Container2
+  Container2,
+  Container3,
+  ComponentText2
 } from './style'
 import ic_return1 from '../../assets/ic_return.png'
 import { useNavigation } from '@react-navigation/native'
@@ -28,13 +30,13 @@ const HeaderPokedex = ({ color, name, id }: IDetails) => {
         <ComponentImage source={ic_return1} />
       </Container1>
       <Container2>
-        <ComponentText>{name && name.toUpperCase()}</ComponentText>
-      </Container2>
-      <Container2>
-        <ComponentText style={{ color: 'white', fontWeight: 'bold' }}>
-          {id}
+        <ComponentText color={color}>
+          {name && name.toUpperCase()}
         </ComponentText>
       </Container2>
+      <Container3>
+        <ComponentText2 color={color}>{id}</ComponentText2>
+      </Container3>
     </Container>
   )
 }

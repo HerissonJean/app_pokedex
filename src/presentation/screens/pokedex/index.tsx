@@ -17,12 +17,9 @@ import {
 } from './style'
 import { defineColor } from '../../../utils/defineColors'
 
-import ContainerPowers from '../../components/ContainerPowers'
+import ContainerPowers from '../../components/containerPowers'
 
 import ContainerSize from '../../components/containerSize'
-import ic_weight from '../../assets/ic_weight.png'
-import ic_height from '../../assets/ic_height.png'
-import { Progress } from 'native-base'
 
 const Pokedex = () => {
   const route = useRoute()
@@ -88,6 +85,10 @@ const Pokedex = () => {
             </ContainerTypes>
 
             {/*  base stats */}
+
+            <TextProps color={defineColor(data && data.types[0].type.name)}>
+              Base Stats
+            </TextProps>
             <ContainerPowers data={data}></ContainerPowers>
           </View>
         </ContainerDatails>

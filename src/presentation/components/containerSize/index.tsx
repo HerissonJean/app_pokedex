@@ -23,7 +23,7 @@ const ContainerSize = ({ data }: ISize) => {
         <ViewHabilityColumn>
           <ViewHability>
             <Image source={ic_weight} style={{ width: 20, height: 20 }}></Image>
-            <Text> {data && data.weight} m</Text>
+            <Text> {data && data.weight / 10} kg</Text>
           </ViewHability>
           <TextGrey>Weight</TextGrey>
         </ViewHabilityColumn>
@@ -31,14 +31,14 @@ const ContainerSize = ({ data }: ISize) => {
         <ViewHabilityColumn>
           <ViewHability>
             <Image source={ic_height} style={{ width: 15, height: 20 }}></Image>
-            <Text> {data && data.height} m</Text>
+            <Text> {data && data.height / 10} m</Text>
           </ViewHability>
           <TextGrey>Height</TextGrey>
         </ViewHabilityColumn>
 
         <ViewHabilityColumn>
           <ViewHability>
-            <Text> {data && data.moves[0].move.name} m</Text>
+            <Text> {data && data.moves[0].move.name}</Text>
           </ViewHability>
           <TextGrey>Moves</TextGrey>
         </ViewHabilityColumn>

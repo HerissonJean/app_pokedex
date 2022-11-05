@@ -18,6 +18,7 @@ export const TextProps = styled.Text<Icolor>`
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  align-self: center;
   font-size: 16px;
 `
 
