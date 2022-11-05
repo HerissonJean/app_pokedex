@@ -42,17 +42,20 @@ const Pokedex = () => {
 
       <View>
         <ContainerDatails>
+          <TextProps color={defineColor(data && data.types[0].type.name)}>
+            Types
+          </TextProps>
           <View
             style={{
               width: '98%',
               height: '100%',
               borderRadius: 25,
-              margin: 4
-              // container estranho
+              marginStart: 8,
+              marginTop: 8,
+              alignSelf: 'center',
+              alignItems: 'center'
             }}
           >
-            {/*  Types */}
-
             <ContainerTypes>
               <ViewType
                 style={{
@@ -66,28 +69,15 @@ const Pokedex = () => {
                 <TextProps>Water</TextProps>
               </ViewType>
             </ContainerTypes>
-
-            {/*  About */}
-
             <ContainerTypes>
               <TextProps color={defineColor(data && data.types[0].type.name)}>
-                About
+                Details
               </TextProps>
             </ContainerTypes>
-            {/*  describe image */}
             <ContainerSize data={data}></ContainerSize>
-            {/*  */}
-            <ContainerTypes>
-              <TextApresentation>
-                When it retracts its long neck into its shell, it squirts out
-                water with vigorous force.
-              </TextApresentation>
-            </ContainerTypes>
-
-            {/*  base stats */}
 
             <TextProps color={defineColor(data && data.types[0].type.name)}>
-              Base Stats
+              Habilities
             </TextProps>
             <ContainerPowers data={data}></ContainerPowers>
           </View>

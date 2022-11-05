@@ -64,12 +64,9 @@ export const ContainerAbilities = styled.View`
 `
 export const ViewHability = styled.View`
   width: 100%;
-  height: 80%;
   border-radius: 25px;
-  align-items: center;
   justify-content: center;
   flex-direction: row;
-  align-self: center;
 `
 
 export const ViewHabilityColumn = styled.View`

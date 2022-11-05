@@ -46,7 +46,7 @@ export const ContainerTypes = styled.View`
   width: 98%;
   height: 10%;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 `
 export const ViewType = styled.View<IType>`

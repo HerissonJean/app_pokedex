@@ -18,7 +18,7 @@ interface ISize {
 const ContainerSize = ({ data }: ISize) => {
   // console.log(data)
   return (
-    <View style={{ width: '100%', height: '20%', marginBottom: 20 }}>
+    <View style={{ width: '100%', height: '20%' }}>
       <ContainerAbilities>
         <ViewHabilityColumn>
           <ViewHability>
