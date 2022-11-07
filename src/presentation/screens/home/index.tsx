@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Header from '../../components/header'
 import Input from '../../components/search'
 import List from '../../components/list'
-
 import ScreenComponent from '../../components/screenComponent'
 import Pagination from '../../components/pagination'
 
@@ -17,6 +16,8 @@ interface IReq {
 const Home = () => {
   const [data, setData] = useState<IReq>()
   const [page, setPage] = useState(1)
+
+  // function add page
   function handlePage(click: number) {
     setPage(page + click)
   }

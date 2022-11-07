@@ -2,6 +2,7 @@ import { View } from 'react-native'
 import React from 'react'
 import { FlatList } from 'native-base'
 import Card from '../card'
+import { FlatListStyled } from './style'
 
 interface IList {
   results: [{ name: string }] | undefined
@@ -10,12 +11,7 @@ interface IList {
 const List = ({ results }: IList) => {
   return (
     <View>
-      <FlatList
-        style={{
-          flexDirection: 'column',
-          height: '78%',
-          marginTop: 16
-        }}
+      <FlatListStyled
         numColumns={3}
         columnWrapperStyle={{
           flex: 1,

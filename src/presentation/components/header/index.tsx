@@ -12,7 +12,7 @@ import ic_sort1 from '../../assets/ic_sort.png'
 import { ToastAndroid } from 'react-native'
 
 const Header = () => {
-  const toaast = () => {
+  const toast = () => {
     ToastAndroid.show('Sort', ToastAndroid.SHORT)
   }
 
@@ -24,7 +24,7 @@ const Header = () => {
       <Container2>
         <ComponentText>Pokédex</ComponentText>
       </Container2>
-      <Container1 onPress={toaast}>
+      <Container1 onPress={toast}>
         <ComponentImage source={ic_sort1} />
       </Container1>
     </Container>

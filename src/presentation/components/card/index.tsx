@@ -1,6 +1,5 @@
 import { Image } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-
 import {
   CardComponent,
   ContainerColor,
@@ -8,7 +7,6 @@ import {
   TextComponent,
   TextNameComponent
 } from './style'
-import { View } from 'native-base'
 import React, { useEffect, useState } from 'react'
 import { defineColor } from '../../../utils/defineColors'
 import { PokedexParams } from '../../../application/navigation/@types/navigation'
