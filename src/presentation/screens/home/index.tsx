@@ -15,10 +15,15 @@ interface IReq {
   ]
 }
 
+interface IItem {
+  name: string
+  url: string
+}
+
 const Home = () => {
   const [data, setData] = useState<IReq>()
   const [page, setPage] = useState(1)
-  const [filter, setFilter] = useState<string>()
+  const [filter, setFilter] = useState<string>('')
 
   function handlePage(click: number) {
     setPage(page + click)
@@ -28,9 +33,10 @@ const Home = () => {
     setFilter(e.nativeEvent.text)
   }
 
+  // https://pokeapi.co/api/v2/pokemon/?offset=${(page - 1) * 21}&limit=21`
   useEffect(() => {
     fetch(
-      `https://pokeapi.co/api/v2/pokemon/?offset=${(page - 1) * 21}&limit=21`
+      `https://pokeapi.co/api/v2/pokemon/?offset=${(page - 1) * 21}&limit=100`
     )
       .then(res => res.json())
       .then(data => setData(data))
@@ -40,7 +46,13 @@ const Home = () => {
     <ScreenComponent>
       <Header />
       <Input handleFilter={e => handleFilter(e)} />
-      <List results={data && data.results}></List>
+      <List
+        results={
+          data && filter != ''
+            ? data.results.filter(item => item.name.match(filter.toLowerCase()))
+            : data && data.results
+        }
+      ></List>
       <Pagination
         pages={page}
         handleClick={(click: number) => handlePage(click)}

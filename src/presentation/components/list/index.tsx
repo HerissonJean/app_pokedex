@@ -4,7 +4,7 @@ import { FlatList } from 'native-base'
 import Card from '../card'
 
 interface IList {
-  results: [{ name: string }] | undefined
+  results: [{ name: string }] | undefined | { name: string }[]
 }
 
 const List = ({ results }: IList) => {
