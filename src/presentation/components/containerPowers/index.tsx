@@ -19,7 +19,6 @@ interface IContainerPowers {
 }
 
 const ContainerPowers = ({ data }: IContainerPowers) => {
-  console.log(defineHabilities(data.stats[1].stat.name))
   return (
     <Container>
       <ContainerPowers2>
