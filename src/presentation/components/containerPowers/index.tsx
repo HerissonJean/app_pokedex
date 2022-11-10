@@ -15,7 +15,7 @@ import { defineHabilities } from '../../../utils/defineHabilities'
 import { Progress } from 'native-base'
 
 interface IContainerPowers {
-  data: IPokemon
+  data: IPokemon | undefined
 }
 
 const ContainerPowers = ({ data }: IContainerPowers) => {
@@ -40,7 +40,6 @@ const ContainerPowers = ({ data }: IContainerPowers) => {
             </ViewRow2>
           </ViewRow>
         </ViewColumn>
-        {/* aa */}
         <ViewColumn>
           <ViewRow>
             <View style={{ width: '20%' }}>
@@ -59,7 +58,6 @@ const ContainerPowers = ({ data }: IContainerPowers) => {
             </ViewRow2>
           </ViewRow>
         </ViewColumn>
-        {/* //kkk */}
         <ViewColumn>
           <ViewRow>
             <View style={{ width: '20%' }}>
@@ -78,7 +76,6 @@ const ContainerPowers = ({ data }: IContainerPowers) => {
             </ViewRow2>
           </ViewRow>
         </ViewColumn>
-        {/* //kkk */}
         <ViewColumn>
           <ViewRow>
             <View style={{ width: '20%' }}>
@@ -97,7 +94,6 @@ const ContainerPowers = ({ data }: IContainerPowers) => {
             </ViewRow2>
           </ViewRow>
         </ViewColumn>
-        {/* //kkk */}
         <ViewColumn>
           <ViewRow>
             <View style={{ width: '20%' }}>
@@ -116,7 +112,6 @@ const ContainerPowers = ({ data }: IContainerPowers) => {
             </ViewRow2>
           </ViewRow>
         </ViewColumn>
-        {/* //kkk */}
         <ViewColumn>
           <ViewRow>
             <View style={{ width: '20%' }}>
@@ -136,7 +131,6 @@ const ContainerPowers = ({ data }: IContainerPowers) => {
           </ViewRow>
         </ViewColumn>
 
-        {/* //kkk */}
       </ContainerPowers2>
     </Container>
   )

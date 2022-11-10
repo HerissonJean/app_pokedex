@@ -43,3 +43,8 @@ export const ContainerText = styled.View`
   background-color: 'red';
   height: 10%;
 `
+
+export const ImageStyled = styled.Image`
+  width: 115px;
+  height: 130px;
+`

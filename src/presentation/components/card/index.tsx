@@ -1,14 +1,13 @@
 import { Image } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-
 import {
   CardComponent,
   ContainerColor,
   ContainerText,
+  ImageStyled,
   TextComponent,
   TextNameComponent
 } from './style'
-import { View } from 'native-base'
 import React, { useEffect, useState } from 'react'
 import { defineColor } from '../../../utils/defineColors'
 import { PokedexParams } from '../../../application/navigation/@types/navigation'
@@ -36,7 +35,6 @@ export interface IPokemon {
 
 const Card = ({ data }: ICardProps) => {
   const navigation = useNavigation()
-
   const [pokemon, setPokemon] = useState<IPokemon>()
   const pokemonData: PokedexParams = { data: pokemon }
 
@@ -59,11 +57,7 @@ const Card = ({ data }: ICardProps) => {
       <ContainerColor
         color={defineColor(pokemon && pokemon.types[0].type.name)}
       >
-        <Image
-          style={{
-            width: 115,
-            height: 130
-          }}
+        <ImageStyled
           source={{
             uri: pokemon && pokemon.sprites.front_default
           }}

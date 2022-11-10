@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Header from '../../components/header'
 import Input from '../../components/search'
 import List from '../../components/list'
-
 import ScreenComponent from '../../components/screenComponent'
 import Pagination from '../../components/pagination'
 import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native'
@@ -36,7 +35,7 @@ const Home = () => {
   // https://pokeapi.co/api/v2/pokemon/?offset=${(page - 1) * 21}&limit=21`
   useEffect(() => {
     fetch(
-      `https://pokeapi.co/api/v2/pokemon/?offset=${(page - 1) * 21}&limit=100`
+      `https://pokeapi.co/api/v2/pokemon/?offset=${(page - 1) * 21}&limit=21`
     )
       .then(res => res.json())
       .then(data => setData(data))

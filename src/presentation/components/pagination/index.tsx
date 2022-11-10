@@ -2,6 +2,7 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { Container, IconContainer, PageContainer, TextStyled } from './style'
 import Ionicons from '@expo/vector-icons/AntDesign'
+
 interface PaginationProps {
   pages: number
   handleClick: (click: number) => void
