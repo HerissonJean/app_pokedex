@@ -33,7 +33,6 @@ const Pokedex = () => {
       <ContainerImage>
         <ImagePokemon
           source={{
-            // uri: data && data.sprites.other['official-artwork'].front_default
             uri: data && data.sprites.other.home.front_default
           }}
         ></ImagePokemon>
@@ -46,8 +45,11 @@ const Pokedex = () => {
           </TextProps>
           <View
             style={{
-              flexDirection: 'row',
-              backgroundColor: 'red'
+              width: '100%',
+              height: '10%',
+              padding: 4,
+              justifyContent: 'center',
+              flexDirection: 'row'
             }}
           >
             {data &&

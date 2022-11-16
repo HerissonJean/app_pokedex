@@ -7,12 +7,13 @@ import {
   Container,
   ViewColumn,
   ViewRow,
-  ViewRow2
+  ViewRow2,
+  TextProps3
 } from './style'
 import { defineColor } from '../../../utils/defineColors'
 import { defineHabilities } from '../../../utils/defineHabilities'
 
-import { Progress } from 'native-base'
+import { Column, Progress } from 'native-base'
 
 interface IContainerPowers {
   data: IPokemon | undefined
@@ -24,52 +25,87 @@ const ContainerPowers = ({ data }: IContainerPowers) => {
       <ContainerPowers2>
         <ViewColumn>
           <ViewRow>
-            <View style={{ width: '20%' }}>
-              <TextProps2 color={defineColor(data && data.types[0].type.name)}>
-                {defineHabilities(data.stats[0].stat.name)}-
-                {data && data.stats[0].base_stat}
-              </TextProps2>
+            <View style={{ width: '20%', flexDirection: 'row' }}>
+              <View>
+                <TextProps2
+                  color={defineColor(data && data.types[0].type.name)}
+                >
+                  {defineHabilities(data && data.stats[0].stat.name)}
+                </TextProps2>
+              </View>
+
+              <View>
+                <TextProps2
+                  color={defineColor(data && data.types[0].type.name)}
+                >
+                  : {data && data.stats[0].base_stat}
+                </TextProps2>
+              </View>
             </View>
 
             <ViewRow2>
               <Progress
-                style={{ width: '95%', alignSelf: 'flex-end' }}
+                style={{ width: '100%' }}
                 value={data && data.stats[0].base_stat}
                 colorScheme="gray"
               />
             </ViewRow2>
           </ViewRow>
         </ViewColumn>
+
         <ViewColumn>
           <ViewRow>
-            <View style={{ width: '20%' }}>
-              <TextProps2 color={defineColor(data && data.types[0].type.name)}>
-                {defineHabilities(data.stats[1].stat.name)}-
-                {data && data.stats[1].base_stat}
-              </TextProps2>
+            <View style={{ width: '20%', flexDirection: 'row' }}>
+              <View>
+                <TextProps2
+                  color={defineColor(data && data.types[0].type.name)}
+                >
+                  {defineHabilities(data && data.stats[1].stat.name)}
+                </TextProps2>
+              </View>
+
+              <View>
+                <TextProps2
+                  color={defineColor(data && data.types[0].type.name)}
+                >
+                  : {data && data.stats[1].base_stat}
+                </TextProps2>
+              </View>
             </View>
 
             <ViewRow2>
               <Progress
-                style={{ width: '95%', alignSelf: 'flex-end' }}
+                style={{ width: '100%' }}
                 value={data && data.stats[1].base_stat}
                 colorScheme="gray"
               />
             </ViewRow2>
           </ViewRow>
         </ViewColumn>
+
         <ViewColumn>
           <ViewRow>
-            <View style={{ width: '20%' }}>
-              <TextProps2 color={defineColor(data && data.types[0].type.name)}>
-                {defineHabilities(data.stats[2].stat.name)}-
-                {data && data.stats[2].base_stat}
-              </TextProps2>
+            <View style={{ width: '20%', flexDirection: 'row' }}>
+              <View>
+                <TextProps2
+                  color={defineColor(data && data.types[0].type.name)}
+                >
+                  {defineHabilities(data && data.stats[2].stat.name)}
+                </TextProps2>
+              </View>
+
+              <View>
+                <TextProps2
+                  color={defineColor(data && data.types[0].type.name)}
+                >
+                  : {data && data.stats[2].base_stat}
+                </TextProps2>
+              </View>
             </View>
 
             <ViewRow2>
               <Progress
-                style={{ width: '95%', alignSelf: 'flex-end' }}
+                style={{ width: '100%' }}
                 value={data && data.stats[2].base_stat}
                 colorScheme="gray"
               />
@@ -78,59 +114,92 @@ const ContainerPowers = ({ data }: IContainerPowers) => {
         </ViewColumn>
         <ViewColumn>
           <ViewRow>
-            <View style={{ width: '20%' }}>
-              <TextProps2 color={defineColor(data && data.types[0].type.name)}>
-                {defineHabilities(data.stats[3].stat.name)}-
-                {data && data.stats[3].base_stat}
-              </TextProps2>
+            <View style={{ width: '20%', flexDirection: 'row' }}>
+              <View>
+                <TextProps2
+                  color={defineColor(data && data.types[0].type.name)}
+                >
+                  {defineHabilities(data && data.stats[5].stat.name)}
+                </TextProps2>
+              </View>
+
+              <View>
+                <TextProps2
+                  color={defineColor(data && data.types[0].type.name)}
+                >
+                  : {data && data.stats[5].base_stat}
+                </TextProps2>
+              </View>
             </View>
 
             <ViewRow2>
               <Progress
-                style={{ width: '95%', alignSelf: 'flex-end' }}
-                value={data && data.stats[3].base_stat}
-                colorScheme="gray"
-              />
-            </ViewRow2>
-          </ViewRow>
-        </ViewColumn>
-        <ViewColumn>
-          <ViewRow>
-            <View style={{ width: '20%' }}>
-              <TextProps2 color={defineColor(data && data.types[0].type.name)}>
-                {defineHabilities(data.stats[4].stat.name)}-
-                {data && data.stats[4].base_stat}
-              </TextProps2>
-            </View>
-
-            <ViewRow2>
-              <Progress
-                style={{ width: '95%', alignSelf: 'flex-end' }}
-                value={data && data.stats[4].base_stat}
-                colorScheme="gray"
-              />
-            </ViewRow2>
-          </ViewRow>
-        </ViewColumn>
-        <ViewColumn>
-          <ViewRow>
-            <View style={{ width: '20%' }}>
-              <TextProps2 color={defineColor(data && data.types[0].type.name)}>
-                {defineHabilities(data.stats[5].stat.name)}-
-                {data && data.stats[5].base_stat}
-              </TextProps2>
-            </View>
-
-            <ViewRow2>
-              <Progress
-                style={{ width: '95%', alignSelf: 'flex-end' }}
+                style={{ width: '100%' }}
                 value={data && data.stats[5].base_stat}
                 colorScheme="gray"
               />
             </ViewRow2>
           </ViewRow>
         </ViewColumn>
+        <ViewColumn>
+          <ViewRow>
+            <View style={{ width: '20%', flexDirection: 'row' }}>
+              <View>
+                <TextProps2
+                  color={defineColor(data && data.types[0].type.name)}
+                >
+                  {defineHabilities(data && data.stats[3].stat.name)}
+                </TextProps2>
+              </View>
 
+              <View>
+                <TextProps2
+                  color={defineColor(data && data.types[0].type.name)}
+                >
+                  : {data && data.stats[3].base_stat}
+                </TextProps2>
+              </View>
+            </View>
+
+            <ViewRow2>
+              <Progress
+                style={{ width: '100%' }}
+                value={data && data.stats[3].base_stat}
+                colorScheme="gray"
+              />
+            </ViewRow2>
+          </ViewRow>
+        </ViewColumn>
+
+        <ViewColumn>
+          <ViewRow>
+            <View style={{ width: '20%', flexDirection: 'row' }}>
+              <View>
+                <TextProps2
+                  color={defineColor(data && data.types[0].type.name)}
+                >
+                  {defineHabilities(data && data.stats[4].stat.name)}
+                </TextProps2>
+              </View>
+
+              <View>
+                <TextProps2
+                  color={defineColor(data && data.types[0].type.name)}
+                >
+                  : {data && data.stats[4].base_stat}
+                </TextProps2>
+              </View>
+            </View>
+
+            <ViewRow2>
+              <Progress
+                style={{ width: '100%' }}
+                value={data && data.stats[4].base_stat}
+                colorScheme="gray"
+              />
+            </ViewRow2>
+          </ViewRow>
+        </ViewColumn>
       </ContainerPowers2>
     </Container>
   )

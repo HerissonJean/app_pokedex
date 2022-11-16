@@ -1,20 +1,15 @@
-import { View, Text } from 'react-native'
 import React from 'react'
 import { ContainerTypes, TextProps, ViewType } from './styles'
+import { defineColor } from '../../../utils/defineColors'
 
 interface ITypePokemonProps {
   type: { name: string }
 }
 
 const TypePokemon = ({ type }: ITypePokemonProps) => {
-  console.log(type)
   return (
     <ContainerTypes>
-      <ViewType
-        style={{
-          backgroundColor: 'blue'
-        }}
-      >
+      <ViewType color={defineColor(type.name)}>
         <TextProps>{type.name}</TextProps>
       </ViewType>
     </ContainerTypes>
